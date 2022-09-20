@@ -14,14 +14,12 @@ fully selfhosted multi-user web app for externally storing Reddit items (saved, 
 	- git
 	- npm
 - setup::
-	1. clone repo: `git clone https://github.com/jc9108/expanse.git`
-	2. cd into repo: `cd ./expanse/`
-	3. create environment variables file: `cp ./backend/.env_example ./backend/.env_prod`
-	4. fill out the values in the `./backend/.env_prod` file
-- usage::
-	1. cd into repo
-	2. start: `npm run prod`
-	3. go to http://localhost:1301
+	1. clone or download this repo
+	2. switch to this branch: `git checkout embedded-postgres`
+	2. in `expanse/backend`, make a copy of `.env_example` and name it `.env_prod`
+	3. read the comments and edit the values in `.env_prod`
+	4. run `build.cmd` (despite the file extention, no windows specific commands are used, so you can `sh build.cmd`)
+	5. go to http://localhost:1301
 - updating::
 	1. cd into repo
 	2. update: `git pull`
