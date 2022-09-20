@@ -1,17 +1,14 @@
 [Unit]
 Description=web app for storing Reddit items
-Documentation=https://github.com/jc9108/expanse
+Documentation=https://github.com/sugoidogo/expanse
 Wants=network-online.target
-Requires=docker.service
-After=network-online.target docker.service
+After=network-online.target
 
 [Service]
 Type=exec
-WorkingDirectory=/opt/expanse
-ExecStartPre=git pull
-ExecStartPre=docker compose -f ./compose.prod.yaml pull
-ExecStart=docker compose -f ./compose.prod.yaml up
-ExecStop=docker compose -f ./compose.prod.yaml down
+WorkingDirectory=/opt/expanse/backend
+ExecStartPre=-npm install
+ExecStart=npm run prod
 
 [Install]
 WantedBy=default.target
