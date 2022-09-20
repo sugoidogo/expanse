@@ -10,6 +10,8 @@ fully selfhosted multi-user web app for externally storing Reddit items (saved, 
 	- unsave/delete/unvote/unhide items from Reddit directly on expanse
 	- import csv data from [Reddit data request](https://www.reddit.com/settings/data-request)
 	- export data as json
+- features of this fork::
+	- cross-platform: this fork runs anywhere node.js does, and the embedded database can be used on [many platforms](https://www.npmjs.com/search?q=%40embedded-postgres)
 - prereqs::
 	- git
 	- npm
