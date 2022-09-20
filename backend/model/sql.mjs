@@ -2,7 +2,7 @@ import node_pg from "pg";
 import EmbeddedPostgres from "embedded-postgres";
 
 if(process.env.PSQL_CONNECTION){
-	process.env.POSTGRES_EMBEDDED=="false"
+	process.env.POSTGRES_EMBEDDED="false"
 }
 
 const pool = new node_pg.Pool({ // https://node-postgres.com/api/pool
