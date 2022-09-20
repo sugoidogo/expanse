@@ -29,6 +29,9 @@ fully selfhosted multi-user web app for externally storing Reddit items (saved, 
 	1. cd into repo
 	2. update expanse path in service file: `sed -i s./opt/expanse.$PWD.g expanse.service`
 	3. enable and start expanse: `systemctl enable $PWD/expanse.service --now`
+- support::
+	- For support with features of this fork, or features broken by this fork, open an issue or join the [discord](https://discord.gg/zxDnYSvMNw)
+	- For all other support questions, go [upstream](https://github.com/jc9108/expanse)
 - [hosted version](https://github.com/jc9108/eternity)
 
 <hr/>
