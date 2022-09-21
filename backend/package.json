@@ -2,7 +2,8 @@
 	"type": "module",
 	"scripts": {
 		"dev": "nodemon -r dotenv/config controller/server.mjs dotenv_config_path=.env_dev",
-		"prod": "node -r dotenv/config controller/server.mjs dotenv_config_path=.env_prod"
+		"prod": "node -r dotenv/config controller/server.mjs dotenv_config_path=.env_prod",
+		"docker": "node -r dotenv/config controller/server.mjs dotenv_config_path=/data/.env_prod"
 	},
 	"devDependencies": {
 		"@types/express": "4.17.18",
