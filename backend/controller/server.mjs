@@ -320,8 +320,13 @@ io.on("connect", (socket) => {
 	});
 });
 
+if(process.env.DOCKER=="true"){
+	process.env.IP='0.0.0.0'
+	process.env.PORT='1301'
+}
+
 server.listen(Number.parseInt(process.env.PORT), process.env.IP, () => {
-	console.log(`server (expanse) started on (localhost:${process.env.PORT})`);
+	console.log(`server (expanse) started on (${process.env.IP}:${process.env.PORT})`);
 });
 
 process.on("beforeExit", async (exit_code) => {
