@@ -12,20 +12,23 @@ fully selfhosted multi-user web app for externally storing Reddit items (saved, 
 - export data as json
 ## features of this fork
 - cross-platform: this fork runs anywhere node.js does, and the embedded database can be used on [many platforms](https://www.npmjs.com/search?q=%40embedded-postgres)
-## prereqs
+## docker usage
+Docker images for this fork of expanse are availible on docker hub and ghcr.io at `sugoidogo/expanse`. The web ui is accessible at tcp port 1301 and a volume or bind mount for `/data` is required, with the `.env_prod` file in that directory. Download and edit [this file](backend/.env_example) to create your `.env_prod`.
+## manual usage
+### prereqs
 - git
 - npm
-## setup
+### setup
 1. clone or download this repo
 2. switch to this branch: `git checkout embedded-postgres`
 2. in `expanse/backend`, make a copy of `.env_example` and name it `.env_prod`
 3. read the comments and edit the values in `.env_prod`
 4. run `build.cmd` (despite the file extention, no windows specific commands are used, so you can `sh build.cmd`)
 5. go to http://localhost:1301
-## updating
+### updating
 1. cd into repo
 2. update: `git pull`
-## automatic startup via systemd
+### automatic startup via systemd
 1. cd into repo
 2. update expanse path in service file: `sed -i s./opt/expanse.$PWD.g expanse.service`
 3. enable and start expanse: `systemctl enable $PWD/expanse.service --now`
