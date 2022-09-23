@@ -7,7 +7,6 @@ After=network-online.target
 [Service]
 Type=exec
 WorkingDirectory=/opt/expanse/backend
-ExecStartPre=-npm install
 ExecStart=npm run prod
 
 [Install]
