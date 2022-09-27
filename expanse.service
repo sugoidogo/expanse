@@ -5,7 +5,7 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-Type=exec
+Type=notify
 WorkingDirectory=/opt/expanse/backend
 ExecStart=npm run prod
 
