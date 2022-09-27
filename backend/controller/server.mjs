@@ -10,6 +10,7 @@ import passport_reddit from "passport-reddit";
 import crypto from "crypto";
 import filesystem from "fs";
 import fileupload from "express-fileupload";
+import { exec } from "child_process";
 
 const file = await import(`${process.env.backend}/model/file.mjs`);
 const sql = await import(`${process.env.backend}/model/sql.mjs`);
@@ -335,3 +336,5 @@ process.on("beforeExit", async (exit_code) => {
 		console.error(err);
 	}
 });
+
+exec('systemd-notify --ready')
