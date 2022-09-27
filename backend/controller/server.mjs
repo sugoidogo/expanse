@@ -14,6 +14,7 @@ import passport_reddit from "passport-reddit";
 import crypto from "crypto";
 import filesystem from "fs";
 import fileupload from "express-fileupload";
+import { exec } from "child_process";
 
 const app = express();
 const server = http.createServer(app);
@@ -336,3 +337,5 @@ process.on("beforeExit", async (exit_code) => {
 		console.error(err);
 	}
 });
+
+exec('systemd-notify --ready')
