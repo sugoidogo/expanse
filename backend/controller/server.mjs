@@ -14,6 +14,7 @@ import passport_reddit from "passport-reddit";
 import crypto from "crypto";
 import filesystem from "fs";
 import fileupload from "express-fileupload";
+import { exec } from "child_process";
 
 const app = express();
 const server = http.createServer(app);
@@ -310,8 +311,13 @@ io.on("connect", (socket) => {
 	});
 });
 
-server.listen(Number.parseInt(process.env.PORT), "0.0.0.0", () => {
-	console.log(`server (expanse) started on (localhost:${process.env.PORT})`);
+if(process.env.DOCKER=="true"){
+	process.env.IP='0.0.0.0'
+	process.env.PORT='1301'
+}
+
+server.listen(Number.parseInt(process.env.PORT), process.env.IP, () => {
+	console.log(`server (expanse) started on (${process.env.IP}:${process.env.PORT})`);
 });
 
 process.on("beforeExit", async (exit_code) => {
@@ -321,3 +327,5 @@ process.on("beforeExit", async (exit_code) => {
 		console.error(err);
 	}
 });
+
+exec('systemd-notify --ready')

@@ -1,16 +1,13 @@
 [Unit]
-Description=fully selfhosted multi-user web app for externally storing Reddit items (saved, created, upvoted, downvoted, hidden) to bypass Reddit's 1000-item listing limits
-Documentation=https://github.com/jc9108/expanse
+Description=web app for storing Reddit items
+Documentation=https://github.com/sugoidogo/expanse
 Wants=network-online.target
-Requires=docker.service
-After=network-online.target docker.service
+After=network-online.target
 
 [Service]
-Type=exec
-WorkingDirectory=/opt/expanse/
-ExecStartPre=-/opt/expanse/run.sh prod update
-ExecStart=/opt/expanse/run.sh prod up --no-d
-ExecStop=/opt/expanse/run.sh prod down
+Type=notify
+WorkingDirectory=/opt/expanse/backend
+ExecStart=npm run prod
 
 [Install]
 WantedBy=default.target
