@@ -20,7 +20,6 @@ Docker images for this fork of expanse are availible on docker hub and ghcr.io a
 - npm
 ### setup
 1. clone or download this repo
-2. switch to this branch: `git checkout embedded-postgres`
 2. in `expanse/backend`, make a copy of `.env_example` and name it `.env_prod`
 3. read the comments and edit the values in `.env_prod`
 4. run `build.cmd` (despite the file extention, no windows specific commands are used, so you can `sh build.cmd`)
