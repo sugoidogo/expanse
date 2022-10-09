@@ -35,7 +35,3 @@ Docker images for this fork of expanse are availible on docker hub and ghcr.io a
 - For support with features of this fork, or features broken by this fork, open an issue or join the [discord](https://discord.gg/PbGT9tVWTC)
 - For all other support questions, go [upstream](https://github.com/jc9108/expanse)
 - [hosted version](https://github.com/jc9108/eternity)
-
-## upstream sponsors
-- [jlynnes](https://github.com/jlynnes)
-- [rickcecil](https://github.com/rickcecil)
