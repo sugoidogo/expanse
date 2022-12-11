@@ -16,7 +16,10 @@ jobs:
         with:
           images: ${{ GITHUB.REPOSITORY }}
         id: meta
-      - run: docker build . -t ${{ steps.meta.outputs.tags }}
+      - uses: docker/build-push-action@v3
+        with:
+          push: false
+          tags: ${{ steps.meta.outputs.tags }}
       - uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
