@@ -23,8 +23,9 @@ Docker images for this fork of expanse are availible on docker hub and ghcr.io a
 2. in `expanse/backend`, make a copy of `.env_example` and name it `.env_prod`
 3. read the comments and edit the values in `.env_prod`
 4. run `build.cmd` (despite the file extention, no windows specific commands are used, so you can `sh build.cmd`)
-5. start the server: `npm run prod`
-6. go to http://localhost:1301
+5. change to the backend directory: `cd backend`
+6. start the server: `npm run prod`
+7. go to http://localhost:1301
 ### updating
 1. cd into repo
 2. update: `git pull`
