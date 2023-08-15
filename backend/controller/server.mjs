@@ -1,5 +1,9 @@
-process.env.backend = process.cwd();
-process.env.frontend = process.env.backend.replace("backend", "frontend");
+const backend = process.cwd();
+
+const file = await import(`file:///${backend}/model/file.mjs`);
+const sql = await import(`file:///${backend}/model/sql.mjs`);
+const user = await import(`file:///${backend}/model/user.mjs`);
+const utils = await import(`file:///${backend}/model/utils.mjs`);
 
 import * as socket_io_server from "socket.io";
 import express from "express";
@@ -12,10 +16,12 @@ import filesystem from "fs";
 import fileupload from "express-fileupload";
 import { exec } from "child_process";
 
+/**
 const file = await import(`${process.env.backend}/model/file.mjs`);
 const sql = await import(`${process.env.backend}/model/sql.mjs`);
 const user = await import(`${process.env.backend}/model/user.mjs`);
 const utils = await import(`${process.env.backend}/model/utils.mjs`);
+//*/
 
 const app = express();
 const server = http.createServer(app);

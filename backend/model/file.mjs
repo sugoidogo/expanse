@@ -1,9 +1,16 @@
+const backend = process.cwd();
+
+const sql = await import(`file:///${backend}/model/sql.mjs`);
+const utils = await import(`file:///${backend}/model/utils.mjs`);
+
 import * as xlsx from "xlsx";
 import filesystem from "fs";
 import child_process from "child_process";
 
+/**
 const sql = await import(`${process.env.backend}/model/sql.mjs`);
 const utils = await import(`${process.env.backend}/model/utils.mjs`);
+*/
 
 async function init() {
 	for (const dir of [`${process.env.backend}/logs/`, `${process.env.backend}/tempfiles/`, `${process.env.backend}/backups/`]) {
